@@ -1,15 +1,10 @@
 import streamlit as st
 from langchain_openai.chat_models import ChatOpenAI
-from dotenv import load_dotenv
-import os
-
-# Load environment variables from the .env file (if present)
-load_dotenv()
 
 st.title("🦜🔗 Quickstart App")
 
 # Access environment variables as if they came from the actual environment
-openai_api_key = os.getenv('OPENAI_API_KEY')
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 
 def generate_response(input_text):
